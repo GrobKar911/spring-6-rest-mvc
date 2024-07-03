@@ -1,4 +1,4 @@
-package com.grobkar.spring_6_rest_mvc;
+package com.grobkar.spring6restmvc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
