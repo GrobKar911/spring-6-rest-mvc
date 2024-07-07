@@ -49,4 +49,19 @@ public class CustomerController {
         return customerService.getCustomerById(id);
     }
 
+    @PutMapping("/{customerId}")
+    public ResponseEntity updateCustomer(@PathVariable("customerId") UUID id,@RequestBody Customer customer){
+
+        customerService.updateCustomerById(id,customer);
+
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
+    }
+
+    @PatchMapping("{customerId}")
+    public ResponseEntity patchCustomer(@PathVariable("customerId") UUID id,@RequestBody Customer customer){
+
+        customerService.patchCustomerById(id,customer);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
+    }
+
 }
