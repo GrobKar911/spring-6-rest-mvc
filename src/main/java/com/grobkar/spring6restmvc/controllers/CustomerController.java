@@ -20,6 +20,12 @@ public class CustomerController {
 
     private final CustomerService customerService;
 
+    @DeleteMapping("/{customerId}")
+    public ResponseEntity deleteCustomer(@PathVariable("customerId") UUID customerId){
+        customerService.deleteCustomerById(customerId);
+
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
+    }
     @PostMapping
     public ResponseEntity handlePost(@RequestBody Customer customer){
         Customer savedCustomer = customerService.newSavedCustomer(customer);
