@@ -14,7 +14,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     Map<UUID,Customer> customerMap = new HashMap();
 
-    CustomerServiceImpl() {
+    public CustomerServiceImpl() {
 
         Customer customer1 = Customer.builder()
                 .customerName("John Thomson")
