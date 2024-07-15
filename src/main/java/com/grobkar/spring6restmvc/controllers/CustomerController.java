@@ -47,7 +47,7 @@ public class CustomerController {
 
         log.debug("Customer Controller - get by Id - 1234");
 
-        return customerService.getCustomerById(id);
+        return customerService.getCustomerById(id).orElseThrow(NotFoundException::new);
     }
 
     @PutMapping(CUSTOMER_PATH_ID)
